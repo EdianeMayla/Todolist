@@ -1,0 +1,20 @@
+<%- include ('partials/header.ejs') %>
+<body> 
+  <%- include ('partials/navbar.ejs') %>
+  <div class ="container">
+    <div class="card" id= "formulario-tarefa">
+      <div class="card-header">
+        <h3><i class="bi-card-list" style="margin-right: 9px;"></i>Cadastrar Tarefa</h3>
+      </div>
+      <div class="card-body">
+        <form method="POST" action="/salvartarefa">
+          <br>
+          <input type="text" placeholder ="Digite a tarefa" class="form-control" name="titulo">
+          <br>
+          <button class="btn botoes-acao">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include ('partials/footer.ejs') %>

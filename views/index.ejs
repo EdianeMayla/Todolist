@@ -1,0 +1,27 @@
+<%- include ('partials/header.ejs') %>
+<body> 
+  <%- include ('partials/navbar.ejs') %>
+
+  <div class ="container">
+    <hr>
+    <a href= "/cadastrar" class="btn botoes-acao">Cadastrar Nova Tarefa</a>
+    <hr>
+    <h1><i class="bi-card-list" style="margin-right: 8px;"></i> Lista de Tarefas: </h1>
+    <hr>
+    <% tarefas.forEach(tarefa => { %>
+      <br>
+      <div class="card">
+        <div class="card-body Delete-Res-button">
+          <h3><i class="bi bi-caret-right" style="margin-right: 12px;"></i><%= tarefa.titulo %></h3>
+          <form method="POST" action="/tarefa/delete">
+            <input type="hidden" name="id" value="<%= tarefa.id %>">
+            <button class="btn btn-success delete-button"><i class="bi bi-check" style="margin-right: 12px;"></i>Feito</button> 
+          </form>
+        </div>
+      </div>
+   <% }) %>
+
+  </div>
+</body>
+<%- include ('partials/footer.ejs') %>
+
